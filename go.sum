@@ -10,6 +10,10 @@ github.com/denisenkom/go-mssqldb v0.0.0-20181014144952-4e0d7dc8888f h1:WH0w/R4Yo
 github.com/denisenkom/go-mssqldb v0.0.0-20181014144952-4e0d7dc8888f/go.mod h1:xN/JuLBIz4bjkxNmByTiV1IbhfnYb6oo99phBn4Eqhc=
 github.com/gedex/inflector v0.0.0-20170307190818-16278e9db813 h1:Uc+IZ7gYqAf/rSGFplbWBSHaGolEQlNLgMgSE3ccnIQ=
 github.com/gedex/inflector v0.0.0-20170307190818-16278e9db813/go.mod h1:P+oSoE9yhSRvsmYyZsshflcR6ePWYLql6UU1amW13IM=
+github.com/go-goracle/dburl v0.0.0-20180921222126-e33971d4c132 h1:cRKJ4yZeCZbCEXJmjZMa9s2z+3eavo2a4qu/usvVopI=
+github.com/go-goracle/dburl v0.0.0-20180921222126-e33971d4c132/go.mod h1:g6rdekR8vgfVZrkLWfobLTm0kVez7GAN23mWtkGCJ14=
+github.com/go-goracle/dburl v0.0.2 h1:GHU6BvJzUReeTlZ/qThQqfKrtyk99axq3s/NqOQX7Ik=
+github.com/go-goracle/dburl v0.0.2/go.mod h1:lf5dfQcBRMhEGVewvmoxteRy2/1wmqKZKb/p67laaqc=
 github.com/go-kit/kit v0.7.0 h1:ApufNmWF1H6/wUbAG81hZOHmqwd0zRf8mNfLjYj/064=
 github.com/go-kit/kit v0.7.0/go.mod h1:xBxKIO96dXMWWy0MnWVtmwkA9/13aqxPnvrjFYMA2as=
 github.com/go-logfmt/logfmt v0.3.0 h1:8HUsc87TaSWLKwrnumgC8/YconD2fJQsRJAsWaPg2ic=
@@ -35,8 +39,6 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/testify v1.2.2 h1:bSDNvY7ZPG5RlJ8otE/7V6gMiyenm9RtJ7IUVIAoJ1w=
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
-github.com/xo/dburl v0.0.0-20180921222126-e33971d4c132 h1:cRKJ4yZeCZbCEXJmjZMa9s2z+3eavo2a4qu/usvVopI=
-github.com/xo/dburl v0.0.0-20180921222126-e33971d4c132/go.mod h1:g6rdekR8vgfVZrkLWfobLTm0kVez7GAN23mWtkGCJ14=
 github.com/xo/xoutil v0.0.0-20171112033149-46189f4026a5 h1:3ANIpg9VQB91yCAyY+5dobfm30xQNOG3sCjPoPQo5i8=
 github.com/xo/xoutil v0.0.0-20171112033149-46189f4026a5/go.mod h1:GngMELAA694UVFs172352HAA2KQEf4XuETgWmL4XSoY=
 golang.org/x/crypto v0.0.0-20181030102418-4d3f4d9ffa16 h1:y6ce7gCWtnH+m3dCjzQ1PCuwl28DDIc3VNnvY29DlIA=

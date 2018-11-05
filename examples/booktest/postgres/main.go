@@ -8,7 +8,7 @@ import (
 
 	_ "github.com/lib/pq"
 
-	"github.com/xo/dburl"
+	"github.com/go-goracle/dburl"
 
 	"github.com/go-goracle/xo/examples/booktest/postgres/models"
 )

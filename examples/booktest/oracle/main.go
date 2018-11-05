@@ -8,7 +8,7 @@ import (
 
 	_ "gopkg.in/goracle.v2"
 
-	"github.com/xo/dburl"
+	"github.com/go-goracle/dburl"
 
 	"github.com/go-goracle/xo/examples/booktest/oracle/models"
 )

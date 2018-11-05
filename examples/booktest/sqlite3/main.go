@@ -8,7 +8,7 @@ import (
 
 	_ "github.com/mattn/go-sqlite3"
 
-	"github.com/xo/dburl"
+	"github.com/go-goracle/dburl"
 	"github.com/xo/xoutil"
 
 	"github.com/go-goracle/xo/examples/booktest/sqlite3/models"

@@ -16,7 +16,7 @@ import (
 
 	"github.com/alexflint/go-arg"
 
-	"github.com/xo/dburl"
+	"github.com/go-goracle/dburl"
 	"github.com/go-goracle/xo/internal"
 	"github.com/go-goracle/xo/models"
 
@@ -25,18 +25,6 @@ import (
 )
 
 func main() {
-	// circumvent all logic to just determine if xo was built with oracle
-	// support
-	if len(os.Args) == 2 && os.Args[1] == "--has-oracle-support" {
-		var out int
-		if _, ok := internal.SchemaLoaders["ora"]; ok {
-			out = 1
-		}
-
-		fmt.Fprintf(os.Stdout, "%d", out)
-		return
-	}
-
 	var err error
 
 	// get defaults
