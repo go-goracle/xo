@@ -1,5 +1,3 @@
-// +build oracle
-
 package loaders
 
 import (
@@ -10,8 +8,8 @@ import (
 
 	_ "gopkg.in/goracle.v2"
 
-	"github.com/xo/xo/internal"
-	"github.com/xo/xo/models"
+	"github.com/go-goracle/xo/internal"
+	"github.com/go-goracle/xo/models"
 )
 
 func init() {

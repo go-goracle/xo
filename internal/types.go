@@ -1,6 +1,6 @@
 package internal
 
-import "github.com/xo/xo/models"
+import "github.com/go-goracle/xo/models"
 
 // TemplateType represents a template type.
 type TemplateType uint
