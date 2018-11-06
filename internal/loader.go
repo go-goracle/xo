@@ -39,7 +39,7 @@ type Loader interface {
 }
 
 // SchemaLoaders are the available schema loaders.
-var SchemaLoaders = map[string]Loader{}
+var SchemaLoaders = make(map[string]Loader, 8)
 
 // TypeLoader provides a common Loader implementation used by the built in
 // schema/query loaders.

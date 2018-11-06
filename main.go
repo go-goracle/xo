@@ -199,7 +199,7 @@ func openDB(args *internal.ArgType) error {
 	// parse dsn
 	u, err := dburl.Parse(args.DSN)
 	if err != nil {
-		return fmt.Errorf("%v: %q", err, args.DSN)
+		return fmt.Errorf("%v: %q\n%+v", err, args.DSN, err)
 	}
 
 	// save driver type
