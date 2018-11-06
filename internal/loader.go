@@ -310,7 +310,7 @@ func (tl TypeLoader) LoadEnums(args *ArgType) (map[string]*Enum, error) {
 	enumMap := map[string]*Enum{}
 	for _, e := range enumList {
 		enumTpl := &Enum{
-			Name:              SingularizeIdentifier(e.EnumName),
+			Name:              args.SingularizeIdentifier(e.EnumName),
 			Schema:            args.Schema,
 			Values:            []*EnumValue{},
 			Enum:              e,
@@ -467,11 +467,16 @@ func (tl TypeLoader) LoadRelkind(args *ArgType, relType RelType) (map[string]*Ty
 	}
 
 	// tables
+	nameFilter := args.NameFilterFunc()
 	tableMap := make(map[string]*Type)
 	for _, ti := range tableList {
+		if !nameFilter(ti.TableName) {
+			continue
+		}
+
 		// create template
 		typeTpl := &Type{
-			Name:    SingularizeIdentifier(ti.TableName),
+			Name:    args.SingularizeIdentifier(ti.TableName),
 			Schema:  args.Schema,
 			RelType: relType,
 			Fields:  []*Field{},

@@ -1,6 +1,9 @@
 package internal
 
-import "database/sql"
+import (
+	"database/sql"
+	"regexp"
+)
 
 // ArgType is the type that specifies the command line arguments.
 type ArgType struct {
@@ -12,6 +15,9 @@ type ArgType struct {
 
 	// Schema is the name of the schema to query.
 	Schema string `arg:"-s,help:schema name to generate Go types for"`
+
+	// NameLike filters the names with regexp
+	NameFilter string `arg:"--name-filter,help:filter names with this regexp"`
 
 	// Out is the output path. If Out is a file, then that will be used as the
 	// path. If Out is a directory, then the output file will be
@@ -150,6 +156,9 @@ type ArgType struct {
 	// ShortNameTypeMap is the collection of Go style short names for types, mainly
 	// used for use with declaring a func receiver on a type.
 	ShortNameTypeMap map[string]string `arg:"-"`
+
+	// KeepIdentifiers avoids running SingularizeIdentifiers on identifiers.
+	KeepIdentifiers bool `arg:"--keep-identifiers,help:keep identifiers and do not singularize"`
 }
 
 // NewDefaultArgs returns the default arguments.
@@ -213,6 +222,21 @@ func NewDefaultArgs() *ArgType {
 func (a *ArgType) Description() string {
 	return `xo is a command line utility to generate Go code from a database schema.
 `
+}
+
+func (a *ArgType) SingularizeIdentifier(s string) string {
+	if a.KeepIdentifiers {
+		return s
+	}
+	return SingularizeIdentifier(s)
+}
+
+func (a *ArgType) NameFilterFunc() func(string) bool {
+	if a.NameFilter == "" {
+		return func(_ string) bool { return true }
+	}
+	r := regexp.MustCompile(a.NameFilter)
+	return func(s string) bool { return r.MatchString(s) }
 }
 
 // Args are the application arguments.
