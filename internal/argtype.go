@@ -226,7 +226,7 @@ func (a *ArgType) Description() string {
 
 func (a *ArgType) SingularizeIdentifier(s string) string {
 	if a.KeepIdentifiers {
-		return s
+		return CamelIdentifier(s)
 	}
 	return SingularizeIdentifier(s)
 }

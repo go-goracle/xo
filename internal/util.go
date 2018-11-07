@@ -222,6 +222,11 @@ func SingularizeIdentifier(s string) string {
 	return snaker.SnakeToCamelIdentifier(s)
 }
 
+// CamelIdentifier will return the identifier in CamelCase.
+func CamelIdentifier(s string) string {
+	return snaker.SnakeToCamelIdentifier(s)
+}
+
 // TBuf is to hold the executed templates.
 type TBuf struct {
 	TemplateType TemplateType
