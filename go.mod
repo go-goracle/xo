@@ -16,6 +16,7 @@ require (
 	github.com/stretchr/testify v1.2.2 // indirect
 	github.com/xo/xoutil v0.0.0-20171112033149-46189f4026a5
 	golang.org/x/crypto v0.0.0-20181030102418-4d3f4d9ffa16 // indirect
+	golang.org/x/net v0.0.0-20180911220305-26e67e76b6c3 // indirect
 	google.golang.org/appengine v1.3.0 // indirect
-	gopkg.in/goracle.v2 v2.9.0
+	gopkg.in/goracle.v2 v2.12.1
 )
