@@ -1,7 +1,6 @@
 package internal
 
 import (
-	"errors"
 	"fmt"
 	"strings"
 
@@ -598,30 +597,29 @@ func (tl TypeLoader) LoadTableForeignKeys(args *ArgType, tableMap map[string]*Ty
 		var refTpl *Type
 		var col, refCol *Field
 
-	colLoop:
 		// find column
 		for _, f := range typeTpl.Fields {
 			if f.Col.ColumnName == fk.ColumnName {
 				col = f
-				break colLoop
+				break
 			}
 		}
 
-	refTplLoop:
 		// find ref table
 		for _, t := range tableMap {
 			if t.Table.TableName == fk.RefTableName {
 				refTpl = t
-				break refTplLoop
+				break
 			}
 		}
 
-	refColLoop:
 		// find ref column
-		for _, f := range refTpl.Fields {
-			if f.Col.ColumnName == fk.RefColumnName {
-				refCol = f
-				break refColLoop
+		if refTpl != nil {
+			for _, f := range refTpl.Fields {
+				if f.Col.ColumnName == fk.RefColumnName {
+					refCol = f
+					break
+				}
 			}
 		}
 
@@ -632,7 +630,9 @@ func (tl TypeLoader) LoadTableForeignKeys(args *ArgType, tableMap map[string]*Ty
 
 		// check everything was found
 		if col == nil || refTpl == nil || refCol == nil {
-			return errors.New("could not find col, refTpl, or refCol")
+			fmt.Printf("no col, refTpl, or refCol for %s.%s\n", args.Schema, typeTpl.Table.TableName)
+			continue
+			//return errors.New("could not find col, refTpl, or refCol for "+)
 		}
 
 		// foreign key name
